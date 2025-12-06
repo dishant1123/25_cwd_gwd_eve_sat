@@ -1,0 +1,54 @@
+c : procedure  
+
+cpp / c++  ==> object oriented languages , high level 
+
+==============================================
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+
+{
+	int  a=10; 
+	printf("a value is  : %d",a);
+	return "ram";  
+	
+}
+================================================
+
+cpp ==> 
+
+printf()  ==> cout  
+scanf()   ==> cin 
+
+#include<iostream.h>
+
+=================================================
+
+cpp  print  hello  : 
+
+with using  namespace  : 
+#include<iostream>
+using namespace std; 
+int main()
+{
+	cout<<"suhani"<<endl;
+	return 0;
+}
+===================================================
+without using namespace 
+#include<iostream>
+int main()
+{
+	std::cout<<"suhani"<<endl;
+	std::cout<<"rutvi\n"<<"\n";
+	std::cout<<"jagrut panjabi"<<endl;
+
+	std:: cin>>a;	
+	return 0;
+}
+
+
+
+
+
