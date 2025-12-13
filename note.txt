@@ -28,6 +28,7 @@ scanf()   ==> cin
 cpp  print  hello  : 
 
 with using  namespace  : 
+
 #include<iostream>
 using namespace std; 
 int main()
