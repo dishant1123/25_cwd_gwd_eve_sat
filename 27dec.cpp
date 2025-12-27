@@ -87,7 +87,7 @@ int main()
 *            5 
 
 */
-
+/*
 #include<iostream>
 using namespace std;
 int main()
@@ -96,6 +96,74 @@ int main()
     for(i=1; i<=5; i++)// 1 
     {
         for(j=5; j>=i; j--) // 5  5 >=1 
+        {
+            cout<<"*"<<" ";
+        }
+        cout<<endl;
+    }
+    return 0; 
+}
+*/ 
+/*
+#include<iostream>
+using namespace std;
+int main()
+{
+    int i,j; 
+    for(i=1; i<=5; i++)//  2  2<=5 
+    {
+        for(j=i; j<=i; j++) // j=2  2 <=5      1 2 3 4 5  
+        {
+            cout<<j<<" ";
+        }
+        cout<<endl;
+    }
+    return 0; 
+}
+*/  
+
+/*
+3 :           4:        5: 
+* * * * *   * * * * *       * 
+  * * * *    * * * *      * * 
+    * * *     * * *     * * * 
+      * *      * *    * * * * 
+        *       *   * * * * *
+*/
+
+// #include<iostream>
+// using namespace std;
+// int main()
+// {
+//     int i,j,k; 
+//     for(i=1; i<=5; i++)// 2 2 <=5
+//     {
+//         for(k=1; k<i; k++)//   1 1 <2
+//         {
+//             cout<<" ";
+//         }
+//         for(j=5; j>=i; j--) // 5  5 >=1 
+//         {
+//             cout<<"*"<<"";
+//         }
+//         cout<<endl;
+//     }
+//     return 0; 
+// }
+
+
+#include<iostream>
+using namespace std;
+int main()
+{
+    int i,j,k; 
+    for(i=1; i<=5; i++)// 2 2 <=5
+    {
+        for(k=5; k>i; k--)//   1 1 <2
+        {
+            cout<<" ";
+        }
+        for(j=1; j<=i; j++) // 5  5 >=1 
         {
             cout<<"*"<<" ";
         }
