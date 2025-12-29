@@ -87,7 +87,7 @@ int main()
 */ 
 
 // scan value : 
-
+/*
 #include<iostream>
 using namespace std;
 int main()
@@ -99,3 +99,23 @@ int main()
     cout<<"value of a is : "<<a<<endl;
     return 0; 
 }
+*/ 
+
+// conditional statement  
+
+/*
+
+if (con) 
+    cout<<
+else 
+    cout<< 
+
+if con  
+    cout<<
+else if con 
+    cout<<
+else 
+    cout<<
+*/
+
+// task   :1 ask user to enter the 3 number  and print small  medium and  larger ex: a=10 b =20 c=30   ==< c is  big  b is  medium a is small 
