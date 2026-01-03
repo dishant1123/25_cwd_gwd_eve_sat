@@ -107,7 +107,7 @@ after  delete :  {12,14,16,20}
 user index : 3 
 after  delete :  {12,14,16,20}
 */
-
+/*
 #include<iostream>
 using namespace std;
 int main()
@@ -138,7 +138,7 @@ int main()
     }
     return 0; 
 }
-
+*/ 
 // task  :1 
 /*
 int a[5] = {10,45,67,23,90} 
@@ -149,3 +149,54 @@ print index number  of  90  : 4
 
 // duplicate  : 
 
+#include<iostream>
+using namespace std;
+int main()
+{
+    int  a[50],num,j,k,i; 
+    cout<<"enter the size of array : ";
+    cin>>num; 
+    for(i=0; i<num; i++)
+    {
+        cin>>a[i]; 
+    }
+    cout<<"before delete array element is  : "<<endl;
+    for(i=0; i<num; i++)
+    {                       //  index   0  1  2  3 4  
+        cout<<a[i]<<endl;    // a[5] = {1 ,2, 3, 5} 
+    }
+
+    for(i=0; i<num; i++) // 1  1 <5 
+    {
+        for(j=i+1; j<num; j++) // j=3  3  <5 
+        {
+            if(a[i] ==a[j]) //a[1] == a[3]
+            {
+                for(k=j; k<num-1; k++)// k=4  4< 4 
+                {
+                    a[k] =a[k+1]; // a[3]  = a[4]
+                }
+                num--; // 4
+                j--;// 2
+            }
+        }
+    }
+    cout<<"after remove duplicate array element is  : "<<endl;
+    for(i=0; i<num; i++)
+    {
+        cout<<a[i]<<endl;   
+    }
+    return 0; 
+}
+
+//hw  : 
+/*
+make  menu  driven  program  using  switch  case : 
+1.  insert 
+2.  delete
+3.  update
+4.  search
+5.  duplicate
+6.  exit 
+
+*/
