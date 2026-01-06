@@ -183,3 +183,104 @@ logic : sum =0 , mul =1
 
     if (sum == mul)  ==> twin 
 */
+
+/*
+#include<iostream>
+using namespace std;
+int main()
+{
+    int  num,r,sum=0,mul=1; 
+    cout<<"enter the number : ";
+    cin>>num; 
+    while(num >0)
+    {
+        r = num %10 ; 
+        sum =sum +r ;
+        mul =mul *r ;
+        num = num /10; 
+    }
+    if (sum == mul)
+    {
+        cout<<"twin"<<endl;
+    }
+    else 
+    {
+        cout<<"not twin"<<endl;
+    }
+    return 0; 
+}
+*/ 
+
+// strong number  : 
+
+/*
+145 : 
+each digit  factorial  : 1 =1  4 =24  5=120 
+sum = 1+24+120  =  145 
+*/
+/*
+#include<iostream>
+using namespace std;
+int  main()
+{
+    int  num, r, sum=0,fact; 
+    cout<<"enter the number : ";
+    cin>>num; //145 
+    int  temp =num;  // temp =145 
+    while(temp >0) // 0 > 0 
+    {
+        r= temp %10 ;  // r= 1 %10 =1 
+        fact =1 ; 
+        for(int  i=1; i<=r; i++) // i =1 1<= 1 
+        {
+            fact =fact *i ;  // fact =1
+        }
+        sum =sum +fact;  // sum = 145
+        temp = temp /10;  // temp =0 
+    }
+    if(sum ==num)
+    {
+        cout<<"strong"<<endl;
+    }
+    return 0;
+
+}
+*/ 
+
+// amg in range  : 
+
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main()
+{
+    int start,end, temp ,sum,count ; 
+    cout<<"enter the start number : ";
+    cin>>start; //100 
+    cout<<"enter the end number : ";
+    cin>>end; //10000 
+
+    for(int i =start; i<=end; i++) //100  100 <=10000 
+    {
+            temp =i;   // temp =100
+            count =0; 
+            while(temp >0)
+            {
+                temp = temp /10; 
+                count++; //3 
+            }
+            temp =i; // temp =100 
+            sum= 0; 
+            while(temp >0)// 100 > 0 
+            {
+                int  r = temp %10; 
+                sum =sum + pow(r,count); 
+                temp = temp /10; 
+            } 
+            if(sum ==i)
+            {
+                cout<<i<<endl;
+            }
+    }
+    return 0; 
+}
