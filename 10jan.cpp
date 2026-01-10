@@ -56,6 +56,7 @@ int main()
 1.find the minimum element from the unsorted part the array. 
 2.swapping it with the first unsorted element.
 */
+/*
 #include <iostream>
 using namespace std;
 int main()
@@ -89,6 +90,84 @@ int main()
         a[i]=a[minindex];// a[0] =1
         a[minindex]=temp; // a[0] =1  // a[5] = {1,      2,    6,   5,    3}
     }
+    cout<<"after sorting array  is  : "<<endl ;
+    for(i=0; i<num; i++)
+    {
+        cout<<a[i]<<" ";
+    }
+    return 0; 
+}
+*/ 
+
+// insertion  sort : 
+/*
+insertion sort works like sorting playing cards in a game like poker.
+take one element at a time  
+insert  it into its correct position in the sorted array.
+
+*/
+/*
+#include <iostream>
+using namespace std;
+int main()
+{
+    int a[50], num, i,j,temp; 
+    cout<<"enter the number of elements"<<endl;
+    cin>>num; 
+
+    for(i=0; i<num; i++)
+    {
+        cin>>a[i]; 
+    }
+    cout<<"before  sorting array  is  : "<<endl ; 
+    for(i=0; i<num; i++)
+    {                      //       a[0]   a[1]  a[2]  a[3]  a[4]
+        cout<<a[i]<<" ";  // a[5] = {1,      6,    2,   5,    3}
+    }
+    cout<<"insertion sort : "<<endl;
+    for(i=1; i<num; i++) // 2  2 <5 
+    {
+        int  key = a[i];   // key =2  
+        int  j=i-1;  // j=1 
+        while(j >=0 && a[j] > key) // 0 >=0 && a[0] > key   1 > 2      
+        {
+            a[j +1] =a[j]; //a[2]  =6 
+            j--; // 0 
+        }
+        a[j +1] =key;  // a[1]=2   //   {1,2 ,6,5,3}
+    }
+    cout<<"after sorting array  is  : "<<endl ;
+    for(i=0; i<num; i++)
+    {
+        cout<<a[i]<<" ";
+    }
+    return 0; 
+}
+*/ 
+// using  STL function using  sort : 
+
+/*
+alogorithm :   == >sort(array,array +arraysize) == >asc to desc  
+*/
+#include<iostream>
+#include<algorithm>
+using  namespace std;
+int main()
+{
+    int a[50],num,i; 
+    cout<<"enter the number of elements"<<endl;
+    cin>>num; 
+    for(i=0; i<num; i++)
+    {
+        cin>>a[i]; 
+    }
+    cout<<"before  sorting array  is  : "<<endl ; 
+    for(i=0; i<num; i++)
+    {                      //       a[0]   a[1]  a[2]  a[3]  a[4]
+        cout<<a[i]<<" ";  // a[5] = {1,      6,    2,   5,    3}
+    }
+    // sort(a,a+num); 
+    sort(a,a+num,greater<int>());
     cout<<"after sorting array  is  : "<<endl ;
     for(i=0; i<num; i++)
     {
