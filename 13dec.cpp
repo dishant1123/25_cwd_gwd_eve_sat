@@ -95,7 +95,6 @@ switch(choice)
 
 /*
 Write a C++ program to calculate the monthly gross pay, annual income, and income tax of an employee using the following rules:
-
 ask user to enter the city and grade.
 
 1. Salary Components
