@@ -346,6 +346,7 @@ index =2
 
 a[6]  = {15,29,99,33,48,45}
 */
+/*
 #include<iostream>
 using namespace std;
 int main()
@@ -382,7 +383,7 @@ int main()
     }
     return 0; 
 }
-
+*/
 // delete  : 
 /*
 int  a[5] = {15,29,33,48,45} 
@@ -392,3 +393,49 @@ remove the  element  of index =2
 a[4] = {15,29,48,45}
 */
 
+
+// duplicate   remove  : 
+/*
+a[5] ={1,2,2,3,3} 
+a[3] = {1,2,3}
+*/
+
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a[50], num,i,j,k; 
+    cout<<"enter the number of elements : ";
+    cin>>num; 
+
+    for(i=0; i<num; i++)
+    {
+        cin>>a[i]; 
+    }
+    cout<<"before update  array  element is  : "<<endl;
+    for(i=0; i<num; i++)
+    {                   //             a[0]  a[1]  a[2]  a[3]  a[4] a[5]
+        cout<<a[i]<<" ";  //int  a[5] = {1,   2 ,    3,    2}
+    }
+
+    for(i=0; i<num; i++) // 0  0 < 5 
+    {
+        for(j=i+1; j<num; j++) // 1  1 < 5  
+        {
+            if(a[i] ==a[j])  // a[0] ==a[1]   1==2
+            {
+                for(k=j; k<num; k++) //  k=4  4 <4 
+                {
+                    a[k] =a[k+1];    // a[3] =a[4]
+                }
+                j--; // 1
+                num--; // 3 
+            }
+        }
+    }
+    cout<<"after remove  duplicate  array  element is  : "<<endl;
+    for(i=0; i<num; i++)
+    {
+        cout<<a[i]<<" ";  // int  a[5] = {1,   2 ,    2    3,   1,   2}
+    }
+}
