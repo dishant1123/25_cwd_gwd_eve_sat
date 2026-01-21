@@ -7,6 +7,7 @@ matrix : 2 d array  .
 */
 
 // ex :1 
+/*
 #include<iostream>
 using namespace std;
 int main()
@@ -54,6 +55,7 @@ int main()
     }
     return 0; 
 }
+*/
 
 /*
 task :2 
@@ -85,3 +87,79 @@ identity matrix :
 0 1 0 
 0 0 1
 */
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a[50][50],i,j,row,col;
+    bool isidentity =true;  
+    cout<<"enter the number of rows : ";
+    cin>>row;
+    cout<<"enter the number of cols : ";
+    cin>>col;
+
+    cout<<"enter the elements of the matrix : "<<endl;
+    for(i=0; i<row; i++)
+    {
+        for(j=0; j<col; j++)
+        {
+            cin>>a[i][j];
+        }
+    }
+    cout<<"matrix is : "<<endl;
+    for(i=0; i<row; i++)
+    {
+        for(j=0; j<col; j++)
+        {
+            cout<<a[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    for(i=0; i<row; i++) //  0  0 <3 
+    {
+        for(j=0; j<col; j++) // /// 0 0 <3 
+        {
+            if(i==j && a[i][j] !=1 ) // 0 == 0 &&  a[0][0] !=1 
+            {
+                isidentity =false;  //
+                break;
+            }
+            else if(i!=j && a[i][j] !=0 ) // 0 !=0
+            {
+                isidentity =false;  // isidentity =
+                break;
+            }
+        }
+    }
+    if(isidentity)
+    {
+        cout<<"identity matrix"<<endl;
+    }
+    else 
+    {
+        cout<<"not identity matrix"<<endl;
+    }
+    return 0; 
+}
+/*
+1 2 3 
+4 5 6
+7 8 9
+*/
+
+/*
+sparse  matrix :
+
+original  matrix : 
+
+1 2 3
+0 0 0 
+1 2 5 
+
+count = 3
+condition : 
+if(  count > row * col / 2 >) 
+{
+    cout<<"sparse matrix"<<endl;
+}
+*/ 

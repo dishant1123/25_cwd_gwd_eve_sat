@@ -248,7 +248,7 @@ int  main()
 */ 
 
 // amg in range  : 
-
+/*
 #include<iostream>
 #include<math.h>
 using namespace std;
@@ -284,3 +284,111 @@ int main()
     }
     return 0; 
 }
+*/
+// array  : 
+/*
+
+int  a[5] = {15,29,33,48,45}
+index : a[0]  ===> 15 
+
+int  a[5] = {12,45,67}
+remaining  two elements  value is  : cout << a[3] ,a[4]  ===> 0 
+
+*/
+
+// update  : 
+/*
+int  a[5] = {15,29,33,48,45}
+
+user  = 99 
+index  = 3
+after  update array  : {15,29,33,99,45}
+*/
+/*
+
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a[50], num,i,user,index; 
+    cout<<"enter the number of elements : ";
+    cin>>num; 
+
+    for(i=0; i<num; i++)
+    {
+        cin>>a[i]; 
+    }
+    cout<<"before update  array  element is  : "<<endl;
+    for(i=0; i<num; i++)
+    {                   //         a[0]  a[1]  a[2]  a[3]  a[4]
+        cout<<a[i]<<" ";  //int  a[5] = {15,  29,   33,   48,    45}
+    }
+    cout<<"enter the  element  you want  to update  : "; 
+    cin>>user;  // 99 
+    cout<<"enter the  index number  you want  to update  : "; 
+    cin>>index;  // 3 
+    a[index] =user;    //      a[3]= 99
+
+    cout<<"after update  array  element is  : "<<endl;
+    for(i=0; i<num; i++)
+    {
+        cout<<a[i]<<" ";  // int  a[5] = {15,  29,   33,   99,    45}
+    }
+    return 0; 
+}
+*/
+// insert : 
+/*
+int  a[5] = {15,29,33,48,45}
+
+user  =99 
+index =2 
+
+a[6]  = {15,29,99,33,48,45}
+*/
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a[50], num,i,user,index; 
+    cout<<"enter the number of elements : ";
+    cin>>num; 
+
+    for(i=0; i<num; i++)
+    {
+        cin>>a[i]; 
+    }
+    cout<<"before update  array  element is  : "<<endl;
+    for(i=0; i<num; i++)
+    {                   //             a[0]  a[1]  a[2]  a[3]  a[4] a[5]
+        cout<<a[i]<<" ";  //int  a[5] = {15, 29,    99    33,   48,   45}
+    }
+    cout<<"enter the  element  you want  to insert : "; 
+    cin>>user;  // 99 
+    cout<<"enter the index number  you want to insert : ";
+    cin>>index; //2 
+
+    for(i=num; i>index; i-- ) // i =2 2 > 2
+    {
+        a[i]=a[i-1]; // a[3]  = a[2] 
+    }
+    a[index] =user;   // a[2] == 99  
+    num++; 
+
+    cout<<"after insert new  element in  array  : "<<endl;
+    for(i=0; i<num; i++)
+    {
+        cout<<a[i]<<" ";  // int  a[5] = {15, 29,    99    33,   48,   45}
+    }
+    return 0; 
+}
+
+// delete  : 
+/*
+int  a[5] = {15,29,33,48,45} 
+
+remove the  element  of index =2
+
+a[4] = {15,29,48,45}
+*/
+
