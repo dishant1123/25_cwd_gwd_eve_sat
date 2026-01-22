@@ -400,6 +400,9 @@ a[5] ={1,2,2,3,3}
 a[3] = {1,2,3}
 */
 
+/*
+
+
 #include<iostream>
 using namespace std;
 int main()
@@ -439,3 +442,62 @@ int main()
         cout<<a[i]<<" ";  // int  a[5] = {1,   2 ,    2    3,   1,   2}
     }
 }
+*/
+
+/*
+scan array  : 
+do 
+{
+    1. update 2. insert 3. delete 4. duplicate 5. exit 
+     
+
+}while(choice !=5);
+*/
+
+//2 d array  :
+/*
+matrix : 
+*/ 
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a[50][50],row,col,i,j; 
+    cout<<"enter the  number  of  rows : "; 
+    cin>>row; 
+    cout<<"enter the  number  of  cols : "; 
+    cin>>col;
+    
+    for(i=0; i<row; i++)
+    {
+        for(j=0; j<col; j++)
+        {
+            cin>>a[i][j]; 
+        }
+    }
+    cout<<"matrix is  : \n"; 
+    for(i=0; i<row; i++)
+    {
+        for(j=0; j<col; j++)
+        {
+            cout<<a[i][j]<<" "; 
+        }
+        cout<<endl;
+    }
+    return 0; 
+}
+/*
+original  matrix  :
+
+1 2 3 
+4 5 6 
+7 8 9
+
+first  row  sum  : 6 
+second  row  sum  : 15
+third  row  sum  : 24
+
+first  col sum : 12 
+second  col sum : 15 
+third  col sum : 18
+*/
