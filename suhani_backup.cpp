@@ -458,6 +458,7 @@ do
 /*
 matrix : 
 */ 
+/*
 #include<iostream>
 using namespace std;
 int main()
@@ -484,8 +485,28 @@ int main()
         }
         cout<<endl;
     }
+
+    for(i=0; i<row; i++)
+    {
+        int  rowsum =0 ; 
+        for(j=0; j<col; j++)
+        {
+            rowsum =rowsum +a[i][j];
+        }
+        cout<<i<< "row sum is  : "<<rowsum<<endl;
+    }
+    for(i=0; i<row; i++)
+    {
+        int  colsum =0 ; 
+        for(j=0; j<col; j++)
+        {
+            colsum =colsum +a[j][i];
+        }
+        cout<<i<< "row sum is  : "<<colsum<<endl;
+    }
     return 0; 
 }
+*/
 /*
 original  matrix  :
 
@@ -501,3 +522,88 @@ first  col sum : 12
 second  col sum : 15 
 third  col sum : 18
 */
+
+//sort : 
+// bubble sort  :
+/*
+
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a[50],num,i,j,temp; 
+    cout<<"enter the number of elements : ";
+    cin>>num; 
+
+    for(i=0; i<num; i++)
+    {
+        cin>>a[i]; 
+    }
+    cout<<"before sort  array  element is  : "<<endl;
+    for(i=0; i<num; i++)     //asc to desc 
+    {                        //         a[0]  a[1]  a[2]  a[3]  a[4]
+        cout<<a[i]<<" ";  // int a[5] = {1,   5,     2,    4,    3}
+    }
+
+    for(i=0; i<num; i++) // 2  2 <5 
+    {
+        for(j=i+1; j<num; j++) // 4  4 <5 
+        {
+                if(a[i] > a[j]) // a[1] > a[4]   2 >3    
+                {
+                    temp =a[i];  // temp = 5 
+                    a[i] =a[j]; // a[1] =2
+                    a[j] =temp;//   a[2]    =5
+                }                       //  1  2  5  4  3 
+        }
+    }
+    cout<<"after sort  array  element is  : "<<endl;
+    for(i=0; i<num; i++)
+    {
+        cout<<a[i]<<" ";  
+    }
+    return 0; 
+}
+*/
+
+// selection sort  :
+
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a[50],num,i,j,temp; 
+    cout<<"enter the number of elements : ";
+    cin>>num; 
+
+    for(i=0; i<num; i++)
+    {
+        cin>>a[i]; 
+    }
+    cout<<"before sort  array  element is  : "<<endl;
+    for(i=0; i<num; i++)     //asc to desc 
+    {                        //         a[0]  a[1]  a[2]  a[3]  a[4]
+        cout<<a[i]<<" ";  // int a[5] = {1,   5,     2,    4,    3}
+    }
+
+    for(i=0; i<num-1; i++)  // 1  1 <4  
+    {
+        int min =i;   //   min = 1 
+        for(j=i+1; j<num; j++) // j=4  4       <5  
+        {
+            if(a[j] < a[min]) // a[4] < a[2] // 3  < 2   
+            {
+                min =j;  // min =2 
+            }
+        }
+        temp =a[i]; // temp = 5 
+        a[i] =a[min];// a[1] =2   
+        a[min] =temp; // a[2] =5   // a[5] = {1 ,2,5 }   
+    }
+    cout<<"after sort  array  element is  : "<<endl;
+    for(i=0; i<num; i++)
+    {
+        cout<<a[i]<<" ";
+    }
+    return 0; 
+}
