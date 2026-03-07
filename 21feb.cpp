@@ -9,7 +9,7 @@
 using namespace std;
 int main()
 {
-    int *p;  // pointer  declaration
+    int *p;  // pointer  declaration   
 
     p=new int; // dynamic memory allocation
 
@@ -260,4 +260,13 @@ int main()
 }
  /*
  s.show(); 
+ */
+
+ /*
+ int a =10 ; 
+ int  *p; 
+ p=&a; 
+ 
+ int **q; 
+ q=&p ; 
  */
