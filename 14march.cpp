@@ -151,7 +151,7 @@ int main()
 */ 
 
 // ex :4 non parameterized constructor
-
+/*
 #include <iostream>
 using namespace std;
 class employees 
@@ -186,3 +186,14 @@ int main()
     m.display();
     return 0 ;
 }
+*/ 
+
+// ex :5 
+
+/*
+multiple inheritance  : 
+
+class a 
+class b 
+class c : public a, public b
+*/
