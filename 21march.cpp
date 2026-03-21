@@ -117,3 +117,169 @@ class c : public a
 class d : public a 
 */
 
+// ex :5  hybrid inheritance : its  combination  of  multiple + multi level 
+
+/*
+class person 
+class  student : public person
+class teacher : public person
+class result : public student , public teacher
+
+               person 
+               /    \
+            student  teacher
+               \     /
+                result    
+*/
+/*
+
+#include <iostream>
+using namespace std;
+class person 
+{
+    protected : 
+        string name;
+    private : 
+        int age; 
+    public : 
+        person(string n, int a)
+        {
+            name =n; 
+            age =a;
+            cout<<"person constructor called"<<endl;
+        }
+    void showperson()
+    {
+        cout<<"name of person is  : "<<name<<endl;
+        cout<<"age of person is  : "<<age<<endl;
+    }
+};
+
+class student : public person
+{
+    protected : 
+        int  roll_no; 
+    public : 
+        student(string n, int a, int r):person(n,a)
+        {
+            roll_no =r;
+            cout<<"student constructor called"<<endl;
+        }
+};
+class teacher : public person
+{
+    protected : 
+        string subject; 
+    public : 
+        teacher(string n, int a, string s):person(n,a)
+        {
+            subject =s;
+            cout<<"teacher constructor called"<<endl;
+        }
+};
+
+class result : public student , public teacher
+{
+    private :
+        int  marks; 
+    public : 
+        result(string n, int a, int r, string s, int m):student(n,a,r),teacher(n,a,s)
+        {
+            marks =m; 
+            cout<<"result constructor called"<<endl;
+        }
+    void display()
+    {
+        cout<<"==========result info==========="<<endl;
+        student ::showperson(); 
+        cout<<"rollno is  : "<<roll_no<<endl;
+        cout<<"subject is  : "<<subject<<endl;
+        cout<<"marks is  : "<<marks<<endl;
+    }
+};
+int  main()
+{
+    result r("yug",19,60,"computer",98); 
+    r.display(); 
+    return 0; 
+}
+*/ 
+/*
+virtual inheritance  : 
+1. diamond problem
+2. virtual keyword 
+
+
+*/
+
+
+#include <iostream>
+using namespace std;
+class person 
+{
+    protected : 
+        string name;
+    private : 
+        int age; 
+    public : 
+        person(string n="", int a=0)
+        {
+            name =n; 
+            age =a;
+            cout<<"person constructor called"<<endl;
+        }
+    void showperson()
+    {
+        cout<<"name of person is  : "<<name<<endl;
+        cout<<"age of person is  : "<<age<<endl;
+    }
+};
+
+class student : virtual public person
+{
+    protected : 
+        int  roll_no; 
+    public : 
+        student (int r=0)
+        {
+            roll_no =r;
+            cout<<"student constructor called"<<endl;
+        }
+};
+class teacher : virtual public person
+{
+    protected : 
+        string subject; 
+    public : 
+        teacher(string s="")    
+        {
+            subject =s;
+            cout<<"teacher constructor called"<<endl;
+        }
+};
+
+class result : public student , public teacher
+{
+    private :
+        int  marks; 
+    public : 
+        result(string n, int a, int r, string s, int m):student(r),teacher(s),person(n,a)
+        {
+            marks =m; 
+            cout<<"result constructor called"<<endl;
+        }
+    void display()
+    {
+        cout<<"==========result info==========="<<endl;
+        student ::showperson(); 
+        cout<<"rollno is  : "<<roll_no<<endl;
+        cout<<"subject is  : "<<subject<<endl;
+        cout<<"marks is  : "<<marks<<endl;
+    }
+};
+int  main()
+{
+    result r("yug",19,60,"computer",98); 
+    r.display(); 
+    return 0; 
+}
