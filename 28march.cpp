@@ -120,7 +120,7 @@ int  main()
 */ 
 
 // ex :4 two class  :
-
+/*
 #include <iostream>
 using namespace std;
 
@@ -160,3 +160,99 @@ int main()
     add(obj1, obj2);
     return 0 ;
 }
+*/ 
+// ex :5 inheritance  + encapsulation   + friend :
+
+#include <iostream>
+using namespace std;
+class employee 
+{
+    protected : 
+        int empid; 
+        string  name; 
+    private : 
+        int  salary; 
+    public : 
+        void setdata(int e, string n, int s)
+        {
+            empid = e;
+            name = n;
+            salary = s;
+        }
+        int  get_salary()
+        {
+                return salary;
+        }
+        int get_id()
+        {
+            return empid;
+        }
+        string get_name()
+        {
+            return name; 
+        }
+        friend void cal_bonus(employee e);
+
+};
+void cal_bonus(employee e)
+{
+    int  bonus = e.get_salary()*0.2;
+    cout<<"Friend function  "<<endl; 
+    cout<<"employees name : "<<e.name<<endl;
+    cout<<"bonus : "<<bonus<<endl;
+}
+
+class fulltime : public employee
+{
+    private : 
+        int  house_rent_allowance;
+    public:
+        void set_hra(int h)
+        {
+            house_rent_allowance =h; 
+        }
+    void display()
+    {
+        cout<<"Full time employee "<<endl;
+        cout<<"id : "<<empid<<endl;
+        cout<<"name : "<<name<<endl;
+        cout<<"salary  : "<<get_salary()<<endl;
+        cout<<"house rent allowance : "<<house_rent_allowance<<endl;
+    }
+};
+class partime : public employee
+{
+    private : 
+        int hours; 
+        int rate; 
+    public : 
+        void setwork(int h, int r)
+        {
+            hours = h;
+            rate = r;
+        }
+        void display()
+        {
+            cout<<"Part time employee "<<endl;
+            cout<<"id : "<<empid<<endl;
+            cout<<"name : "<<name<<endl;
+            cout<<"salary  : "<<get_salary()<<endl;
+            cout<<"work hours : "<<hours<<endl;
+            cout<<"rate : "<<rate<<endl;
+        }
+};
+
+
+/*
+task :1 
+
+int main()
+{
+    menu driven : 
+
+    1. add emp ; 
+    2. display emp ;  ==> fulltime  , parttime  
+    3. cal bonus ;
+    4. exit 
+}
+*/
