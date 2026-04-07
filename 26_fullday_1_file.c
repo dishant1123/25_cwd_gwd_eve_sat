@@ -103,7 +103,7 @@ int  main()
 */ 
 
 // ex :5 read ==> exiting  file ==> read
-
+/*
 #include <stdio.h>
 int main()
 {
@@ -123,3 +123,99 @@ int main()
     fclose(fp);
     return 0 ;
 }
+*/ 
+/*
+Write a function display_oddLines() to display odd number lines from the text file. Consider the following lines for the file – friends.txt.
+
+Friends are crazy, Friends are naughty !
+Friends are honest, Friends are  best !
+Friends are like keygen, friends are like license key !
+We are nothing without friends, Life is not possible without friends !
+*/
+
+// soultion  : 
+/*
+#include <stdio.h>
+int main()
+{
+    FILE *fp;
+    fp =fopen("friends.txt","r");
+
+    char line[500];
+    int line_no = 1;
+    
+    if(fp == NULL)
+    {
+        printf("file not found\n");
+        return 0; 
+    }
+    while(fgets(line,sizeof(line),fp) != NULL)
+    {
+        if(line_no %2 != 0)
+        {
+            printf("%s",line);
+        }
+        line_no++; 
+    }
+    return 0; 
+}
+*/
+
+/*
+read +   : read + write  both  ==> exiting  
+write +  : read +write  both  + new create   ==> exiting  ==> overwrite
+append + read +write  both  + new create   ==> exiting  ==> append
+
+
+*/
+
+// ex :1 
+
+#include <stdio.h>
+int main()
+{
+    FILE *fp;
+    fp =fopen("friends.txt","r+");
+    char line[500];
+    if(fp == NULL)
+    {
+        printf("file not found\n");
+        return 0;
+    }
+   
+    fputs("\nmy name is aaryan.",fp);
+
+    rewind(fp); // goback to the start of file
+    
+    while (fgets(line,sizeof(line),fp)!= NULL)
+    {
+            printf("%s",line);
+    }
+    
+    fclose(fp);
+    return 0 ;
+}
+
+/*
+Write a c  program to reverse the content of a one file and store it in second file and also convert content of second 
+file into uppercase and store it in third file and also count number of Vowels in third file and also print only 2nd line from 
+the content of third file.
+Examples:
+If data file one contains the following data:
+Friends are crazy, Friends are naughty !
+Friends are honest, Friends are  best !
+
+Output 1:
+! tseb  era sdneirF ,tsenoh era sdneirF
+! ythguan era sdneirF ,yzarc era sdneirF
+
+Output 2:
+! TSEB  ERA SDNEIRF ,TSENOH ERA SDNEIRF
+! YTHGUAN ERA SDNEIRF ,YZARC ERA SDNEIRF
+
+Output 3:
+Vowels = 22
+
+Output 4:
+! YTHGUAN ERA SDNEIRF ,YZARC ERA SDNEIRF
+*/
