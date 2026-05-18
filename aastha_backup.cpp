@@ -271,7 +271,7 @@ class a :                            class a   emp
 class b :                            class b : public a   ==> b ==>a   manager
 class c : public a , public b        class c : public b   ==> c ==> a,b  CEO 
 */
-
+/*
 #include <iostream>
 using namespace std;
 class student 
@@ -322,4 +322,166 @@ int  main()
     c.display();
     return 0; 
 }
+*/ 
 
+// template : 
+/*
+
+template allows you to write generic and  reuable code that works with different data type without rewriting  the  same  code  again  and  again.
+
+template<tyname T>
+
+function  : 
+
+void  func(int  a,int b)
+{
+cout<<"value of a is  : "<<a +b<<endl;
+}
+int  main()
+{
+    func(12,45);
+}
+
+*/
+
+// ex :1 
+/*
+#include <iostream>
+using namespace std;
+template<typename T>
+T add(T a , T b)
+{
+    return a+b; 
+}
+
+int main()
+{
+    cout<< "int  value : "<<add(12,3)<<endl;
+    cout<<"float value : "<<add(12.5,3.5)<<endl;
+    cout<<"char value : "<<add('o','p')<<endl; // ascci value 
+
+    return 0 ;
+}
+*/ 
+
+// ex :2 class template :
+/*
+#include <iostream>
+using namespace std;
+
+template<class Y>
+
+class box 
+{
+    public : 
+        Y value;
+    void  set_value(Y v)
+    {
+        value =v;
+    }
+    Y get_value()
+    {
+        return value;
+    }
+}; 
+
+int  main()
+{
+    box<int> intbox; 
+    intbox.set_value(90); 
+    cout<<"int value is  : "<<intbox.get_value()<<endl;
+
+    box<string> strbox; 
+    strbox.set_value("hello");
+    cout<<"string value is  : "<<strbox.get_value()<<endl;
+
+    box<float> floatbox;
+    floatbox.set_value(12.89);
+    cout<<"float value is  : "<<floatbox.get_value()<<endl;
+
+    return 0; 
+}
+*/ 
+
+// ex:3 
+/*
+#include <iostream>
+using namespace std;
+
+template<class T>
+
+class student 
+{
+    private :
+        T marks; 
+    public : 
+        void set_marks(T m)
+        {
+            marks =m;
+        }
+        T get_marks()
+        {
+            return marks;
+        }
+};
+int main()
+{
+    student<int>s1; 
+    s1.set_marks(90);
+    cout<<"marks is  : "<<s1.get_marks()<<endl;
+
+    student<float>s2;
+    s2.set_marks(90.89);
+    cout<<"marks is  : "<<s2.get_marks()<<endl;
+
+    return 0; 
+}
+*/ 
+/*
+#include <iostream>
+using namespace std;
+template<class T>
+
+class calculator 
+{
+    public : 
+        T add(T a , T b)
+        {
+            return a+b;
+        }
+        T mul(T a , T b)
+        {
+            return a*b;
+        }
+};  
+
+int  main()
+{
+    calculator<int>c; 
+    cout<<"int value is  : "<<c.add(12,3)<<endl;
+    cout<<"int value is  : "<<c.mul(12,3)<<endl;
+
+    calculator<float>f;
+    cout<<"float value is  : "<<f.add(12.5,3.5)<<endl;
+    cout<<"float value is  : "<<f.mul(12.5,3.5)<<endl;
+
+    return 0; 
+}
+*/
+
+#include <iostream>
+using namespace std;
+
+template<typename T, typename U>
+void  display(T a , U b)
+{
+    cout<<"value of a is  : "<<a<<endl;
+    cout<<"value of b is  : "<<b<<endl;
+}
+
+int  main()
+{
+    display(12,3.5);
+    display("jag",20);
+    return 0; 
+}
